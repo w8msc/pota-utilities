@@ -11,7 +11,6 @@ May 2021, W8MSC
 
 """
 
-from tkinter import *
 import requests
 import json
 
