@@ -15,3 +15,5 @@ Run the script
 ```
 ./potaspots.py
 ```
+# get-all-parks-csv.py
+Downloads the active parks for POTA in CSV format
