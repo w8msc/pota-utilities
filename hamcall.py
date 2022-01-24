@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Looks up a ham call and displays result
+# Looks up US amateur radio callsign and displays result
 # uses python3 and tkinter
 # by W8MSC, Jan 23, 2022
 
@@ -11,7 +11,7 @@ from tkinter import *
 data = {}
 
 win = Tk()
-win.title("Amateur Radio Callsign Lookup")
+win.title("US Amateur Radio Callsign Lookup")
 
 def clear():
     text.delete(1.0,END)
