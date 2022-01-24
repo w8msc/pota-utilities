@@ -11,6 +11,7 @@ from tkinter import *
 data = {}
 
 win = Tk()
+win.title("Amateur Radio Callsign Lookup")
 
 def clear():
     text.delete(1.0,END)
