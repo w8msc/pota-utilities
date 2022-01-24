@@ -20,3 +20,7 @@ Pulls active park spots and prints in tabular results
 
 # get-all-parks-csv.py
 Downloads the active parks for POTA in CSV format
+
+# hamcall.py
+Looks up info on a ham radio callsign.
+Uses tkinter gui interface.
