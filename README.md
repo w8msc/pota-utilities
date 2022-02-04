@@ -24,3 +24,6 @@ Downloads the active parks for POTA in CSV format
 # hamcall.py
 Looks up info on a ham radio callsign.
 Uses tkinter gui interface.
+
+# potaspotstreegui.py
+Display current spots in a tree widget.
