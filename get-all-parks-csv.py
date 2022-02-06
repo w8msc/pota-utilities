@@ -16,8 +16,8 @@ May 2021, W8MSC
 
 print("Downloading park data...")
 
-# need to switch to pota.app once it's implemented
-url='http://pota.us/all_parks.csv'
+# Swtiched to pota.app  Feb 6, 2022 W8MSC
+url='http://pota.app/all_parks.csv'
 r=requests.get(url)
 
 with open('temp.csv','wb') as f:
