@@ -3,7 +3,6 @@
 import os
 import hashlib
 import requests
-import datetime
 
 """
 Downloads the current list of all POTA parks and saves as CSV
@@ -53,15 +52,6 @@ if os.path.exists('all_parks.csv'):
         os.remove('all_parks.csv')
         os.rename('temp.csv','all_parks.csv')
 
-    #current_filesize=os.stat('all_parks.csv').st_size
-    # print("Current filesize = {}".format(current_filesize))
-    # if temp_filesize==current_filesize:
-    #     print("Files are the same, keeping current park data file")
-    #     os.remove('temp.csv')
-    # else:
-    #     print("Files are not the same, keep the new file")
-    #     os.remove('all_parks.csv')
-    #     os.rename('temp.csv','all_parks.csv')
 else:
     print("No previous park data file")
     os.rename('temp.csv','all_parks.csv')
