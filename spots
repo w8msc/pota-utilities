@@ -1,0 +1,59 @@
+#!/usr/bin/env python3
+
+import requests
+import json
+
+ignore_qrt = True
+url = "https://api.pota.app/spot/activator"
+
+
+class bcolor:
+    HEADER = "\033[95m"
+    OKBLUE = "\033[94m"
+    OKCYAN = "\033[96m"
+    OKGREEN = "\033[92m"
+    WARNING = "\033[93m"
+    FAIL = "\033[91m"
+    ENDC = "\033[0m"
+    BOLD = "\033[1m"
+    UNDERLINE = "\033[4m"
+
+
+# Enter callsigns, locations, and modes to watch for
+watch_callsigns = ["W8TAM", "WT8J", "K8MRD", "K8ERS", "N8LEK", "K8JKU", "NU8M"]
+watch_locations = ["US-HI"]
+watch_modes = ["FT4"]
+
+print("Fetching spots...")
+
+response = requests.get(url)
+spots = response.json()
+
+print("  Activator      Mode       Freq       Park   Location  Park Name")
+for spot in spots:
+    if "QRT" in spot["comments"].upper():
+        pass
+    else:
+        if spot["activator"] in watch_callsigns:
+            color_activator = bcolor.OKGREEN
+        else:
+            color_activator = bcolor.ENDC
+
+        if spot["mode"] in watch_modes:
+            color_mode = bcolor.OKGREEN
+        else:
+            color_mode = bcolor.ENDC
+
+        for location in spot["locationDesc"].split(","):
+            color_location = bcolor.ENDC
+            if location in watch_locations:
+                color_location = bcolor.OKGREEN
+
+        print(
+            f"{color_activator}{spot['activator']:>10}{bcolor.ENDC} "
+            f"{color_mode}{spot['mode']:>10}{bcolor.ENDC} "
+            f"{spot['frequency']:>10} "
+            f"{spot['reference']:>10} "
+            f"{color_location}{spot['locationDesc']:>10}{bcolor.ENDC}\t"
+            f"{spot['name']}"
+        )
