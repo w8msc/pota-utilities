@@ -14,6 +14,8 @@ Run the script
 ```
 ./potaspots.py
 ```
+# spots
+CLI program to display current spots
 
 # potaspots.py
 Pulls active park spots and prints in tabular results
